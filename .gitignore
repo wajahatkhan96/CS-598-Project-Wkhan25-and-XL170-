@@ -127,7 +127,6 @@ venv.bak/
 dmypy.json
 
 # Experimental Folder
-outputs/*
 
 # Weights and Biases logs
 wandb/
