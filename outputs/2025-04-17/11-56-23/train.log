@@ -1,0 +1,182 @@
+[2025-04-17 02:56:23,877][trainers.trainer][INFO] - {'batch_size': 128,
+ 'bert_model': 'bert_tiny',
+ 'device_ids': [0],
+ 'disable_validation': False,
+ 'distributed_world_size': 1,
+ 'dropout': 0.3,
+ 'embed_model': 'descemb_rnn',
+ 'enc_embed_dim': 128,
+ 'enc_hidden_dim': 256,
+ 'eval_data': None,
+ 'fold': None,
+ 'init_bert_params': False,
+ 'init_bert_params_with_freeze': False,
+ 'input_path': '/content/drive/MyDrive/DL4H/data_output_path',
+ 'load_pretrained_weights': False,
+ 'lr': 0.001,
+ 'max_event_len': 150,
+ 'mlm_prob': 0.3,
+ 'model': 'ehr_model',
+ 'model_path': None,
+ 'n_epochs': 100,
+ 'patience': 5,
+ 'pred_embed_dim': 128,
+ 'pred_hidden_dim': 256,
+ 'pred_model': 'rnn',
+ 'ratio': '100',
+ 'rnn_layer': 1,
+ 'save_dir': 'checkpoints',
+ 'save_prefix': 'checkpoint',
+ 'seed': 1,
+ 'src_data': 'mimiciii',
+ 'task': 'diagnosis',
+ 'transfer': False,
+ 'valid_subsets': ['valid', 'test'],
+ 'value_mode': 'VA'}
+[2025-04-17 02:56:23,916][trainers.trainer][INFO] - EHRModel(
+  (embed_model): RNNTextEncoder(
+    (subword_embed_layer): SubwordInputLayer(
+      (embedding): Embedding(28996, 128, padding_idx=0)
+    )
+    (model): GRU(128, 256, batch_first=True, dropout=0.3, bidirectional=True)
+    (post_encode_proj): Linear(in_features=512, out_features=128, bias=True)
+  )
+  (pred_model): RNNModel(
+    (model): GRU(128, 256, batch_first=True, dropout=0.3)
+    (final_proj): Linear(in_features=256, out_features=18, bias=True)
+  )
+)
+[2025-04-17 02:56:23,916][trainers.trainer][INFO] - task: diagnosis
+[2025-04-17 02:56:23,917][trainers.trainer][INFO] - model: EHRModel
+[2025-04-17 02:56:23,917][trainers.trainer][INFO] - num. model params: 4,671,122 (num. trained: 4,671,122)
+[2025-04-17 02:56:38,578][datasets.dataset][INFO] - loaded 11863 train samples
+[2025-04-17 02:57:02,918][datasets.dataset][INFO] - loaded 2980 valid samples
+[2025-04-17 02:57:18,184][datasets.dataset][INFO] - loaded 3693 test samples
+[2025-04-17 02:57:19,866][trainers.trainer][INFO] - begin training epoch 1
+[2025-04-17 02:58:18,231][train][INFO] - epoch: 1, loss: 0.678, auroc: 0.600, auprc: 0.492
+[2025-04-17 02:58:18,232][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 02:58:20,388][valid][INFO] - epoch: 1, loss: 0.670, auroc: 0.657, auprc: 0.561
+[2025-04-17 02:58:20,388][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 02:58:23,100][test][INFO] - epoch: 1, loss: 1.224, auroc: 0.658, auprc: 0.563
+[2025-04-17 02:58:23,103][trainers.trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 02:58:23,263][trainers.trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 02:58:23,263][trainers.trainer][INFO] - begin training epoch 2
+[2025-04-17 02:59:21,494][train][INFO] - epoch: 2, loss: 0.662, auroc: 0.676, auprc: 0.575
+[2025-04-17 02:59:21,495][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 02:59:23,725][valid][INFO] - epoch: 2, loss: 0.655, auroc: 0.688, auprc: 0.586
+[2025-04-17 02:59:23,725][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 02:59:26,489][test][INFO] - epoch: 2, loss: 1.198, auroc: 0.688, auprc: 0.588
+[2025-04-17 02:59:26,492][trainers.trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 02:59:26,662][trainers.trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 02:59:26,662][trainers.trainer][INFO] - begin training epoch 3
+[2025-04-17 03:00:25,483][train][INFO] - epoch: 3, loss: 0.649, auroc: 0.704, auprc: 0.602
+[2025-04-17 03:00:25,484][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:00:27,736][valid][INFO] - epoch: 3, loss: 0.643, auroc: 0.709, auprc: 0.614
+[2025-04-17 03:00:27,736][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:00:30,861][test][INFO] - epoch: 3, loss: 1.175, auroc: 0.709, auprc: 0.616
+[2025-04-17 03:00:30,863][trainers.trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:00:31,038][trainers.trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:00:31,038][trainers.trainer][INFO] - begin training epoch 4
+[2025-04-17 03:01:29,784][train][INFO] - epoch: 4, loss: 0.637, auroc: 0.726, auprc: 0.631
+[2025-04-17 03:01:29,785][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:01:32,129][valid][INFO] - epoch: 4, loss: 0.632, auroc: 0.734, auprc: 0.633
+[2025-04-17 03:01:32,129][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:01:34,914][test][INFO] - epoch: 4, loss: 1.155, auroc: 0.734, auprc: 0.635
+[2025-04-17 03:01:34,917][trainers.trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:01:35,074][trainers.trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:01:35,075][trainers.trainer][INFO] - begin training epoch 5
+[2025-04-17 03:02:33,671][train][INFO] - epoch: 5, loss: 0.627, auroc: 0.741, auprc: 0.644
+[2025-04-17 03:02:33,672][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:02:36,023][valid][INFO] - epoch: 5, loss: 0.622, auroc: 0.750, auprc: 0.641
+[2025-04-17 03:02:36,023][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:02:38,945][test][INFO] - epoch: 5, loss: 1.137, auroc: 0.750, auprc: 0.643
+[2025-04-17 03:02:38,948][trainers.trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:02:39,123][trainers.trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:02:39,123][trainers.trainer][INFO] - begin training epoch 6
+[2025-04-17 03:03:37,822][train][INFO] - epoch: 6, loss: 0.618, auroc: 0.755, auprc: 0.653
+[2025-04-17 03:03:37,822][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:03:40,042][valid][INFO] - epoch: 6, loss: 0.613, auroc: 0.760, auprc: 0.646
+[2025-04-17 03:03:40,042][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:03:43,127][test][INFO] - epoch: 6, loss: 1.121, auroc: 0.761, auprc: 0.647
+[2025-04-17 03:03:43,131][trainers.trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:03:43,330][trainers.trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:03:43,331][trainers.trainer][INFO] - begin training epoch 7
+[2025-04-17 03:04:42,068][train][INFO] - epoch: 7, loss: 0.610, auroc: 0.764, auprc: 0.658
+[2025-04-17 03:04:42,069][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:04:44,313][valid][INFO] - epoch: 7, loss: 0.606, auroc: 0.766, auprc: 0.649
+[2025-04-17 03:04:44,313][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:04:47,123][test][INFO] - epoch: 7, loss: 1.108, auroc: 0.766, auprc: 0.651
+[2025-04-17 03:04:47,126][trainers.trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:04:47,326][trainers.trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:04:47,326][trainers.trainer][INFO] - begin training epoch 8
+[2025-04-17 03:05:46,101][train][INFO] - epoch: 8, loss: 0.602, auroc: 0.769, auprc: 0.661
+[2025-04-17 03:05:46,101][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:05:48,331][valid][INFO] - epoch: 8, loss: 0.599, auroc: 0.769, auprc: 0.651
+[2025-04-17 03:05:48,331][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:05:51,111][test][INFO] - epoch: 8, loss: 1.096, auroc: 0.769, auprc: 0.653
+[2025-04-17 03:05:51,114][trainers.trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:05:51,285][trainers.trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:05:51,285][trainers.trainer][INFO] - begin training epoch 9
+[2025-04-17 03:06:50,002][train][INFO] - epoch: 9, loss: 0.596, auroc: 0.773, auprc: 0.664
+[2025-04-17 03:06:50,002][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:06:52,235][valid][INFO] - epoch: 9, loss: 0.593, auroc: 0.772, auprc: 0.652
+[2025-04-17 03:06:52,236][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:06:55,052][test][INFO] - epoch: 9, loss: 1.085, auroc: 0.772, auprc: 0.654
+[2025-04-17 03:06:55,056][trainers.trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:06:55,223][trainers.trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:06:55,224][trainers.trainer][INFO] - begin training epoch 10
+[2025-04-17 03:07:54,440][train][INFO] - epoch: 10, loss: 0.590, auroc: 0.776, auprc: 0.666
+[2025-04-17 03:07:54,440][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:07:56,778][valid][INFO] - epoch: 10, loss: 0.588, auroc: 0.774, auprc: 0.652
+[2025-04-17 03:07:56,779][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:07:59,588][test][INFO] - epoch: 10, loss: 1.075, auroc: 0.774, auprc: 0.654
+[2025-04-17 03:07:59,591][trainers.trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:07:59,771][trainers.trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:07:59,772][trainers.trainer][INFO] - begin training epoch 11
+[2025-04-17 03:08:58,485][train][INFO] - epoch: 11, loss: 0.584, auroc: 0.778, auprc: 0.669
+[2025-04-17 03:08:58,486][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:09:00,873][valid][INFO] - epoch: 11, loss: 0.584, auroc: 0.774, auprc: 0.652
+[2025-04-17 03:09:00,873][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:09:03,786][test][INFO] - epoch: 11, loss: 1.067, auroc: 0.774, auprc: 0.654
+[2025-04-17 03:09:03,791][trainers.trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:09:03,969][trainers.trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:09:03,970][trainers.trainer][INFO] - begin training epoch 12
+[2025-04-17 03:10:02,608][train][INFO] - epoch: 12, loss: 0.579, auroc: 0.779, auprc: 0.671
+[2025-04-17 03:10:02,609][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:10:04,859][valid][INFO] - epoch: 12, loss: 0.579, auroc: 0.776, auprc: 0.654
+[2025-04-17 03:10:04,859][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:10:07,907][test][INFO] - epoch: 12, loss: 1.060, auroc: 0.776, auprc: 0.655
+[2025-04-17 03:10:07,910][trainers.trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:10:08,078][trainers.trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-17 03:10:08,078][trainers.trainer][INFO] - begin training epoch 13
+[2025-04-17 03:11:06,977][train][INFO] - epoch: 13, loss: 0.574, auroc: 0.781, auprc: 0.673
+[2025-04-17 03:11:06,978][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:11:09,244][valid][INFO] - epoch: 13, loss: 0.576, auroc: 0.776, auprc: 0.653
+[2025-04-17 03:11:09,244][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:11:12,166][test][INFO] - epoch: 13, loss: 1.053, auroc: 0.776, auprc: 0.655
+[2025-04-17 03:11:12,170][trainers.trainer][INFO] - begin training epoch 14
+[2025-04-17 03:12:10,804][train][INFO] - epoch: 14, loss: 0.570, auroc: 0.781, auprc: 0.674
+[2025-04-17 03:12:10,805][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:12:13,038][valid][INFO] - epoch: 14, loss: 0.573, auroc: 0.776, auprc: 0.652
+[2025-04-17 03:12:13,039][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:12:15,836][test][INFO] - epoch: 14, loss: 1.047, auroc: 0.776, auprc: 0.654
+[2025-04-17 03:12:15,839][trainers.trainer][INFO] - begin training epoch 15
+[2025-04-17 03:13:14,492][train][INFO] - epoch: 15, loss: 0.566, auroc: 0.783, auprc: 0.676
+[2025-04-17 03:13:14,493][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:13:16,736][valid][INFO] - epoch: 15, loss: 0.570, auroc: 0.775, auprc: 0.652
+[2025-04-17 03:13:16,737][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:13:19,561][test][INFO] - epoch: 15, loss: 1.042, auroc: 0.776, auprc: 0.654
+[2025-04-17 03:13:19,564][trainers.trainer][INFO] - begin training epoch 16
+[2025-04-17 03:14:18,358][train][INFO] - epoch: 16, loss: 0.562, auroc: 0.784, auprc: 0.678
+[2025-04-17 03:14:18,359][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:14:20,791][valid][INFO] - epoch: 16, loss: 0.567, auroc: 0.775, auprc: 0.652
+[2025-04-17 03:14:20,791][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:14:23,594][test][INFO] - epoch: 16, loss: 1.038, auroc: 0.776, auprc: 0.653
+[2025-04-17 03:14:23,597][trainers.trainer][INFO] - begin training epoch 17
+[2025-04-17 03:15:22,310][train][INFO] - epoch: 17, loss: 0.559, auroc: 0.784, auprc: 0.680
+[2025-04-17 03:15:22,311][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-17 03:15:24,691][valid][INFO] - epoch: 17, loss: 0.565, auroc: 0.775, auprc: 0.652
+[2025-04-17 03:15:24,691][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-17 03:15:27,670][test][INFO] - epoch: 17, loss: 1.034, auroc: 0.775, auprc: 0.654
+[2025-04-17 03:15:27,673][utils.trainer_utils][INFO] - early stop since valid performance hasn't improved for last 5 runs
+[2025-04-17 03:15:27,678][__main__][INFO] - done training

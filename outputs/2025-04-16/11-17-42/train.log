@@ -1,0 +1,63 @@
+[2025-04-16 02:17:42,158][trainers.trainer][INFO] - {'batch_size': 128,
+ 'bert_model': 'bert_tiny',
+ 'device_ids': [0],
+ 'disable_validation': False,
+ 'distributed_world_size': 1,
+ 'dropout': 0.3,
+ 'embed_model': 'descemb_rnn',
+ 'enc_embed_dim': 128,
+ 'enc_hidden_dim': 256,
+ 'eval_data': None,
+ 'fold': None,
+ 'init_bert_params': False,
+ 'init_bert_params_with_freeze': False,
+ 'input_path': '/content/drive/MyDrive/DL4H/data_output_path',
+ 'load_pretrained_weights': False,
+ 'lr': 0.0001,
+ 'max_event_len': 150,
+ 'mlm_prob': 0.3,
+ 'model': 'ehr_model',
+ 'model_path': None,
+ 'n_epochs': 1000,
+ 'patience': 5,
+ 'pred_embed_dim': 128,
+ 'pred_hidden_dim': 256,
+ 'pred_model': 'rnn',
+ 'ratio': '100',
+ 'rnn_layer': 1,
+ 'save_dir': 'checkpoints',
+ 'save_prefix': 'checkpoint',
+ 'seed': 1,
+ 'src_data': 'mimiciii',
+ 'task': 'diagnosis',
+ 'transfer': False,
+ 'valid_subsets': ['valid', 'test'],
+ 'value_mode': 'VA'}
+[2025-04-16 02:17:42,196][trainers.trainer][INFO] - EHRModel(
+  (embed_model): RNNTextEncoder(
+    (subword_embed_layer): SubwordInputLayer(
+      (embedding): Embedding(28996, 128, padding_idx=0)
+    )
+    (model): GRU(128, 256, batch_first=True, dropout=0.3, bidirectional=True)
+    (post_encode_proj): Linear(in_features=512, out_features=128, bias=True)
+  )
+  (pred_model): RNNModel(
+    (model): GRU(128, 256, batch_first=True, dropout=0.3)
+    (final_proj): Linear(in_features=256, out_features=18, bias=True)
+  )
+)
+[2025-04-16 02:17:42,197][trainers.trainer][INFO] - task: diagnosis
+[2025-04-16 02:17:42,197][trainers.trainer][INFO] - model: EHRModel
+[2025-04-16 02:17:42,197][trainers.trainer][INFO] - num. model params: 4,671,122 (num. trained: 4,671,122)
+[2025-04-16 02:18:21,600][datasets.dataset][INFO] - loaded 11863 train samples
+[2025-04-16 02:18:39,972][datasets.dataset][INFO] - loaded 2980 valid samples
+[2025-04-16 02:18:55,768][datasets.dataset][INFO] - loaded 3693 test samples
+[2025-04-16 02:19:01,929][trainers.trainer][INFO] - begin training epoch 1
+[2025-04-16 02:20:01,633][train][INFO] - epoch: 1, loss: 0.688, auroc: 0.444, auprc: 0.385
+[2025-04-16 02:20:01,634][trainers.trainer][INFO] - begin validation on 'valid' subset
+[2025-04-16 02:20:04,030][valid][INFO] - epoch: 1, loss: 0.684, auroc: 0.450, auprc: 0.392
+[2025-04-16 02:20:04,030][trainers.trainer][INFO] - begin validation on 'test' subset
+[2025-04-16 02:20:06,833][test][INFO] - epoch: 1, loss: 1.250, auroc: 0.450, auprc: 0.393
+[2025-04-16 02:20:06,835][trainers.trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-16 02:20:07,005][trainers.trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2025-04-16 02:20:07,006][trainers.trainer][INFO] - begin training epoch 2
