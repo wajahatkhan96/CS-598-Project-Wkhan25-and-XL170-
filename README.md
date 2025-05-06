@@ -1,5 +1,5 @@
 # Unifying Heterogeneous Electronic Health Record Systems via Clinical Text-Based Code Embedding
-Original author: Kyunghoon Hur, Jiyoung Lee, Jungwoo Oh, Wesley Price, Young-Hak Kim, Edward Choi
+# Original author: Kyunghoon Hur, Jiyoung Lee, Jungwoo Oh, Wesley Price, Young-Hak Kim, Edward Choi
 
 # Note:
 To do the preprocessing of the downloaded data, train and evaluate the CodeEmb model on MIMIC-III dataset, run DL4H_Project.ipynb. To train and evaluate the DescEmb model on MIMIC-III dataset, run DL4HProject.ipynb
